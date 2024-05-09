@@ -14,13 +14,14 @@ public class PersonService{
     @Autowired
     private PersonRepository repop;
 
-    @Autowired 
+    @Autowired
     private PassportRepository repo;
 
     public Person addPS(long id,Person p){
         if(repo.existsById(id)){
             Passport p1 = repo.findById(id).get();
             p.setPassport(p1);
+            return repop.save(p);
         }
         return null;
     }
