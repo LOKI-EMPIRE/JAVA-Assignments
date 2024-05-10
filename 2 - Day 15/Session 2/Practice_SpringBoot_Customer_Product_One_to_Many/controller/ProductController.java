@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.examly.springapp.model.Product;
-import com.examly.springapp.service.ProductService;
+import com.examly.springapp.service.ProductServiceImpl;
 
 @RestController
 public class ProductController {
 
     @Autowired
-    private ProductService service;
+    private ProductServiceImpl service;
 
     @PostMapping("/product/customer/{customerId}")
     public ResponseEntity<Product> add(@PathVariable int customerId,@RequestBody Product p){
