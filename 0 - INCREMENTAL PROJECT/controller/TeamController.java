@@ -21,9 +21,9 @@ public class TeamController {
     private TeamServiceImpl service;
 
     List<Team> list = new ArrayList<>();
-    Team t1 = new Team(1,"Loki",10000.66);
-    Team t2 = new Team(2,"Gokul",10000.88);
-    Team t3 = new Team(3,"Sekar",10000.99);
+    Team t1 = new Team("Loki",10000.66);
+    Team t2 = new Team("Gokul",10000.88);
+    Team t3 = new Team("Sekar",10000.99);
     
     @GetMapping("api/test/team")
     public List<Team> getList(){
@@ -49,12 +49,12 @@ public class TeamController {
     }
 
     @GetMapping("api/team/{teamId}")
-    public Team getById(@PathVariable int teamId){
+    public Team getById(@PathVariable long teamId){
         return service.get(teamId);
     }
 
     @DeleteMapping("api/team/{teamId}")
-    public boolean deleteT(@PathVariable int teamId){
+    public boolean deleteT(@PathVariable long teamId){
         return service.delete(teamId);
     }
 }
