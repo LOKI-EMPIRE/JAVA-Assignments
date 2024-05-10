@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.examly.springapp.model.Customer;
-import com.examly.springapp.service.CustomerService;
+import com.examly.springapp.service.CustomerServiceImpl;
 
 @RestController
 public class CustomerController {
 
     @Autowired
-    private CustomerService service;
+    private CustomerServiceImpl service;
 
     @PostMapping("/customer")
     public ResponseEntity<Customer> add(@RequestBody Customer c){
