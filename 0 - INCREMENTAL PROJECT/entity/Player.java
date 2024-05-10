@@ -3,6 +3,7 @@ package com.examly.springapp.entity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Player {
@@ -16,6 +17,9 @@ public class Player {
     private double biddingPrice;
     private boolean sold;
 
+    @ManyToOne
+    private Team team;
+
     public Player(){}
 
     public Player(long id, String name, int age, String category, double biddingPrice, boolean sold) {
@@ -25,8 +29,10 @@ public class Player {
         this.category = category;
         this.biddingPrice = biddingPrice;
         this.sold = sold;
+        this.team = team;
     }
 
+    
     public long getId() {
         return id;
     }
@@ -74,6 +80,12 @@ public class Player {
     public void setSold(boolean sold) {
         this.sold = sold;
     }
-      
-    
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }  
 }
