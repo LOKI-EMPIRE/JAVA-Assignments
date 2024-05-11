@@ -42,7 +42,7 @@ public class ApiService {
     }
 
     public Course updateCourse(int cid, Course s) {
-        if (crepo.existsById(cid)) {
+        if (!crepo.existsById(cid)) {
             s.setId(cid);
             return crepo.save(s);
         }
