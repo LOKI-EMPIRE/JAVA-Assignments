@@ -1,34 +1,31 @@
-class Book{
-    constructor(title,author,price,quantity){
-        this.title = title;
-        this.author = author;
-        this.price = price;
-        this.quantity = quantity;
-       
-        this.getBookInfo = function(){
-            return "Title: "+this.title+", Author: "+this.author+", Price: $"+this.price+", Quantity: "+this.quantity;
+class Student{
+    constructor(name,rollNo,department){
+        this.name = name;
+        this.rollNo = rollNo;
+        this.department = department;
+ 
+        this.getStudentInfo = function(){
+            return "Name: "+this.name+", Roll No: "+this.rollNo+", Department: "+this.department;
         }
     }
 }
  
-inventory = [];
+studentList = [];
  
-function createBook(title,author,price,quantity){
-    return new Book(title,author,price,quantity);
+function createStudent(name,rollNo,department){
+    return new Student(name,rollNo,department);
 }
  
-function addBookToInventory(title,author,price,quantity){
-    inventory.push(createBook(title,author,price,quantity));
+function addStudent(name,rollNo,department){
+    studentList.push(createStudent(name,rollNo,department));
 }
  
-function displayInventory(){
-    inventory.forEach(b => console.log(b.getBookInfo()));
+function displayStudentsList(){
+    studentList.forEach(s => console.log(s.getStudentInfo()));
 }
  
-function calculateTotalValue(){
-    var total = 0;
-    inventory.forEach(b => total += (b.quantity * b.price));
-    return total;
+function calculateTotalStudents(){
+  return studentList.length;
 }
  
-module.exports = {Book, addBookToInventory, displayInventory, calculateTotalValue, createBook, inventory};
+module.exports = {Student,addStudent,displayStudentsList,calculateTotalStudents,createStudent,studentList};
