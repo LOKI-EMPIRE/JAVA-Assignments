@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+</head>
+<body>
+
+    <h1>Task Management</h1>
+    <label for="title">Title*:</label>
+    <input type="text" id="title"><br>
+    <label for="description">Description*:</label>
+    <textarea id="description"></textarea><br>
+    <label for="priority">Priority*:</label>
+    <select id="priority">
+        <option value="none">Select a priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select><br>
+    <label for="dueDate">Due Date*:</label>
+    <input type="date" id="dueDate"><br>
+    <button onclick="submitForm()" id="submitButton">Submit</button><br>
+    <div id="successMessage"></div>
+    <div id="errorMessage"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
