@@ -1,0 +1,7 @@
+<h1>Welcome to Text Modifier</h1>
+<textarea type="text" placeholder="Enter text" [(ngModel)]="originalText"></textarea><br><br>
+<button (click)="applyUppercase()">Convert to Uppercase</button>
+<button (click)="applyLowercase()">Convert to Lowercase</button>
+<button (click)="applyReverse()">Reverse Text</button>
+<button (click)="clearText()">Clear Text</button>
+<p *ngIf="modifiedText">Modified Text: {{modifiedText}}</p>
