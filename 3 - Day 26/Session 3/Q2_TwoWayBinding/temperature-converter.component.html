@@ -1,0 +1,17 @@
+<h1>Welcome to Temperature Converter</h1>
+<label for="temperatureInput">Enter temperature value:</label><br>
+<input type="number" id="temperatureInput" [(ngModel)]="inputValue"><br><br>
+<label for="fromUnitSelect">From unit:</label><br>
+<select id="fromUnitSelect" [(ngModel)]="fromUnit">
+    <option fromUnit="Celsius">Celsius</option>
+    <option fromUnit="Fahrenheit">Fahrenheit</option>
+</select><br><br>
+<label for="toUnitSelect">To unit:</label><br>
+<select id="toUnitSelect" [(ngModel)]="toUnit">
+    <option toUnit="Celsius">Celsius</option>
+    <option toUnit="Fahrenheit">Fahrenheit</option>
+</select><br><br>
+<button (click)="convertTemperature()">Convert</button><br><br>
+<div class="result" *ngIf="result!">The converted temperature is: {{result}}</div>
+
+
