@@ -1,0 +1,6 @@
+<div class="modal-container">
+<h2>Count Fixer</h2>
+<input #seconds type="number"><br><br>
+<button (click)="startCountdown(seconds.value)">Start Countdown</button>
+<p>Remaining Time: <span [innerText]="countdown"></span></p>
+</div>
