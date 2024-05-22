@@ -1,0 +1,8 @@
+<h2>User Profile</h2>
+<p>Name: {{userName}}</p>
+<p>Age: {{userAge}}</p>
+<button (click)="incrementAge()">Increment Age</button>
+<button (click)="resetAge()">Reset Age</button><br><br>
+<label for="userNameInput">Edit User Name:</label>
+<input id="userNameInput" type="text" value={{userName}} (input)="updateUserName($event.target.value)">
+
