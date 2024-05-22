@@ -1,0 +1,6 @@
+<label for="colorDropdown">Select a color:</label>
+<select id="colorDropdown" [(ngModel)]="selectedColor" (change)="onColorChange($event.target.value)">
+    <option></option>
+    <option *ngFor="let color of colors" [value]="color"> {{color}} </option>
+</select><br><br>
+<div *ngIf="selectedColor">You selected: {{selectedColor}}</div>
