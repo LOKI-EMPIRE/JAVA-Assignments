@@ -1,0 +1,15 @@
+<h1 class="heading">Recipe Manager</h1>
+<div *ngFor="let recipe of recipes">
+    <span>{{recipe.name}}</span><br><br>
+    <span>{{recipe.ingredients}}</span><br><br>
+    <button (click)="showDetails(recipe)">View Details</button><br><br>
+</div>
+<div *ngIf="selectedRecipe">
+    <h2>Recipe Details</h2>
+    <span>{{selectedRecipe.name}}</span><br><br>
+    <span>Type: {{selectedRecipe.type}}</span><br><br>
+    <span>Ingredients: {{selectedRecipe.ingredients}}</span><br><br>
+    <span>Instructions: {{selectedRecipe.instructions}}</span><br><br>
+    <button (click)="hideDetails()">Hide Details</button>
+    <button (click)="deleteRecipe()">Delete</button>
+</div>
