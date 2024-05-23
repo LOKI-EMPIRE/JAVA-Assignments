@@ -1,0 +1,10 @@
+<div>
+   <input [(ngModel)]="newItemName" placeholder="Enter item name">
+   <button (click)="addItem()">Add Item</button><br><br>
+</div>
+<div *ngFor="let item of items">
+    <span>{{item.name}}</span>
+    <button (click)="purchaseItem(item)">Purchased</button>
+    <button (click)="deleteItem(i)">Delete</button><br><br>
+</div>
+
