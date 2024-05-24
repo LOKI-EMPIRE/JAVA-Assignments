@@ -1,0 +1,6 @@
+<div>
+    <input type="text" [(ngModel)]="searchText" placeholder="Search">
+    <ul>
+        <li *ngFor="let item of items|searchFilter:searchText">{{item.name}} - {{item.category}}</li>
+    </ul>
+</div>
