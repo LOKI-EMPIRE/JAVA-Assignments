@@ -1,0 +1,22 @@
+<div>
+    <label>Filter by Category: </label>
+    <select [(ngModel)]="selectedCategory">
+        <option *ngFor="let category of categories" [value]="category" >{{category}}</option>
+    </select><br><br>
+    <input placeholder="Search Products" [(ngModel)]="searchTerm"><br><br>
+</div>
+<div *ngFor="let product of products">
+        <div *ngIf="selectedCategory==='All'|| selectedCategory===product.category ">
+            <div *ngIf="product.name.includes(searchTerm)">
+                <h3>{{product.name}}</h3>
+                <span>{{product.description}}</span><br><br>
+                <span>Price: ${{product.price}}</span><br><br>
+                <button (click)="addToCart(product)">Add to Cart</button><br><br>
+            </div>
+        </div>
+</div>
+<h2>Cart</h2>
+<div *ngFor="let c of cart">
+    <span>{{c.name}}</span> &nbsp;
+    <button (click)="removeFromCart(c)">Remove</button> 
+</div>
