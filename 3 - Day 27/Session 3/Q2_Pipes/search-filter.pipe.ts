@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchFilterPipe implements PipeTransform {
 
-  transform(items: any[], searchText: string): any[]{
-    let item:any[] = items.filter(i => ( i.name.includes(searchText) || i.category.includes(searchText) ));
+  transform(items: any[], searchTerm: string): any[]{
+    let item:any[] = items.filter(i => ( (i.name.toLowerCase()).includes(searchTerm.toLowerCase()) || (i.category.toLowerCase()).includes(searchTerm.toLowerCase())) );
     return item;
   }
 }
