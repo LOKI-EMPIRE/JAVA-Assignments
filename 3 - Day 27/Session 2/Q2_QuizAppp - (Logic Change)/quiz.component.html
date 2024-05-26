@@ -1,0 +1,14 @@
+<h1>Welcome to the Quiz!</h1>
+<div *ngIf="currentQuestionIndex<quizQuestions.length">
+        <h3>{{quizQuestions[currentQuestionIndex].question}}</h3>
+        <div *ngFor="let option of quizQuestions[currentQuestionIndex].options" >
+            <ul>
+                <li (click)="checkAnswer(i)">{{option}}</li>
+            </ul>
+        </div>
+        <span>{{feedback}}</span>
+</div>
+<div *ngIf="endQuiz()">
+    <h3>Your Score: {{score}}/{{quizQuestions.length}}</h3>
+    <button (click)="restartQuiz()">Restart Quiz</button>
+</div>
