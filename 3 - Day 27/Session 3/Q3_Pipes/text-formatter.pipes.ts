@@ -49,7 +49,7 @@ export class TextFormatterPipe implements PipeTransform {
   //     case 'capitalize':
   //       return this.cap.transform(value);
   //     case 'reverse':
-  //       return value.split('').reverse().join('');
+  //       return value.split(seperator).reverse().join(seperator);
   //     default:
   //       return value;
   //   }
