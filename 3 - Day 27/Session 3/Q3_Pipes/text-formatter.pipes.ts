@@ -40,7 +40,7 @@ export class TextFormatterPipe implements PipeTransform {
   //   private cap:TitleCasePipe
   //   ){}
  
-  // transform(value: string,format:string): string {
+  // transform(value: string,format:string,seperator:string=' '): string {
   //   switch(format){
   //     case 'uppercase':
   //       return this.up.transform(value);
