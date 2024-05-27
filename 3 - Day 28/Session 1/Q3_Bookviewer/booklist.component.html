@@ -1,0 +1,10 @@
+<div class="container">
+    <img src="src/booklogo.jpg">
+    <h1>Prime Books</h1>
+    <h1>Book List</h1> 
+    <ul *ngFor="let book of books">
+        <li class="book-item" (click)="viewBookDetails(book.id)">
+            <h2>{{book.title}}</h2>
+        </li>
+    </ul>
+</div>
