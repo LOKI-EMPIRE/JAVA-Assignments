@@ -1,0 +1,8 @@
+<h2>Fruit List</h2>
+<div *ngIf="fruits.length===0">No fruits added to the list. </div>
+<div *ngIf="fruits.length>0">
+    <ul *ngFor="let fruit of fruits; index as i">
+       <li>{{fruit.name}}-{{fruit.color}}-{{fruit.origin}}</li>
+       <button (click)="deleteFruit(i)">Delete</button> 
+    </ul>
+</div>
