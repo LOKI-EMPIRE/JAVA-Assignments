@@ -1,0 +1,11 @@
+<h2>Add Vehicle</h2>
+<label for="name">Name:</label><br>
+<input type="text" id="name" [(ngModel)]="name" ><br>
+<span *ngIf="!name">Name is required</span><br><br>
+<label for="type">Type:</label><br>
+<input type="text" id="type" [(ngModel)]="type" ><br>
+<span *ngIf="!type">Type is required</span><br><br>
+<label for="brand">Brand:</label><br>
+<input type="text" id="brand" [(ngModel)]="brand" ><br>
+<span *ngIf="!brand">Brand is required</span><br><br>
+<button (click)="addVehicle()" [disabled]="!name && !type && !brand">Add Vehicle</button>
