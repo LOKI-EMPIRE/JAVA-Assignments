@@ -12,7 +12,7 @@ export class BookviewComponent implements OnInit {
   bookId:number;
   book:any;
 
-  constructor(private rt:Router,private activatedRoute:ActivatedRoute) { }
+  constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.bookId = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
