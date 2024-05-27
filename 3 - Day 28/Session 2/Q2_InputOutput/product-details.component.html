@@ -1,0 +1,7 @@
+<h1>Product Details</h1>
+<div class="product-details-box" *ngIf="selectedProduct">
+    <img [src]="selectedProduct.imageUrl">
+    <p>{{selectedProduct.name}}</p>
+    <p>{{selectedProduct.description}}</p>
+    <p>{{selectedProduct.price}}</p>
+</div>
