@@ -1,0 +1,57 @@
+<h1>Job Registration Form</h1>
+<div class="form-label">
+
+    <form (ngSubmit)="onSubmit(jobForm)" #jobForm="ngForm">
+
+        <label for="name">Name*:</label><br>
+        <input type="text" id="name" name="name" ngModel required><br><br>
+
+        <label for="age">Age*:</label><br>
+        <input type="text" id="age" name="age" ngModel required><br><br>
+
+        <label for="gender">Gender*:</label><br>
+        <select id="gender" name="gender" ngModel required>
+            <option *ngFor="let option of options" [value]="option">{{option}}</option>
+        </select><br><br>
+
+        <label for="phone">Phone*:</label><br>
+        <input type="number" id="number" name="number" ngModel required><br><br>
+
+        <label for="jobPosition">Job Position*:</label><br>
+        <select id="jobPosition" name="jobPosition" ngModel required>
+            <option *ngFor="let job of jobPosition" [value]="job">{{job}}</option>
+        </select><br><br>
+
+        <label for="experience">Experience(in years)*:</label><br>
+        <select id="experience" name="experience" ngModel required>
+            <option *ngFor="let exp of experience" [value]="exp">{{exp}}</option>
+        </select><br><br>
+
+        <label for="skills">Skills:</label><br>
+        <input type="text" name="skills" ngModel required><br><br>
+
+        <label for="education">Education:</label><br>
+        <input type="text" name="education" ngModel required><br><br>
+
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" required ngModel></textarea><br><br>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+<div *ngIf="submitted">
+    <h1>Job Application Submitted</h1>
+    <button (click)="closeModal()">x</button>
+    <p>Name: {{formData.value.name}}</p>
+    <p>Age: {{formData.value.age}}</p>
+    <p>Gender: {{formData.value.gender}}</p>
+    <p>Email: {{formData.value.email}}</p>
+    <p>Phone: {{formData.value.phone}}</p>
+    <p>Job: {{formData.value.jobPosition}}</p>
+    <p>Experience: {{formData.value.experience}}</p>
+    <p>Skills: {{formData.value.skills}}</p>
+    <p>Education: {{formData.value.education}}</p>
+    <p>Comments: {{formData.value.comments}}</p>
+</div>
