@@ -1,32 +1,58 @@
-<h1>Registration Form</h1>
+<h2>User Registration</h2>
 <form (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm">
-    <label for="name">Name</label><br>
-    <input type="text" id="name" #name="ngModel" name="name" required ngModel ><br>
-    <div class="error-message">
-        <span *ngIf="name.invalid">*Name is required</span>
-    </div><br><br>
+    <div class="form-group">
 
-    <label for="email">Email</label><br>
-    <input type="email" id="email" email #email="ngModel" name="email" required ngModel><br>
-    <div class="error-message" >
-        <span *ngIf="email.errors?.required" >*Email is required</span>
-        <span *ngIf="email.errors?.email">*Invalid email format!</span>
-    </div><br><br>
+        <label for="firstName">Enter the First Name:</label><br>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" #firstName="ngModel"
+            minlength="6" required ngModel><br>
+        <div class="error-message">
+            <div *ngIf="firstName.errors?.required">First Name is required.</div>
+            <div *ngIf="firstName.errors?.minlength">Need at least 6 characters.</div>
+        </div><br><br>
 
-    <label for="password">Password</label><br>
-    <input type="text" id="password" #password="ngModel" name="password" required ngModel><br>
-    <div class="error-message">
-        <span *ngIf="password.invalid">*Password is required</span>
-    </div><br><br>
 
-    <label for="confirmPassword">Confirm Password:</label><br>
-    <input type="text" id="confirmPassword" #confirmPassword="ngModel" name="confirmPassword" required ngModel><br>
-    <div class="error-message">
-        <span *ngIf="confirmPassword.invalid">*Confirm Password is required</span>
-        <span *ngIf="passwordMismatch">*Password do not match</span>
-    </div><br><br>
+        <label for="lastName">Enter the Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName" minlength="6" [(ngModel)]="user.lastName" #lastName="ngModel"
+            required ngModel><br>
+        <div class="error-message">
+            <span *ngIf="lastName.errors?.required">Last Name is required.</span>
+            <span *ngIf="lastName.errors?.minlength">Need at least 6 characters.</span>
+        </div><br><br>
 
-    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+        <label for="mobileNumber">Enter the Mobile Number:</label><br>
+        <input type="text" id="mobileNumber" name="mobileNumber" minlength="10" maxlength="10" pattern="[0-9]{10}" [(ngModel)]="user.mobileNumber"
+            #mobileNumber="ngModel" required ngModel><br>
+        <div class="error-message">
+            <span *ngIf="mobileNumber.errors?.minlength || mobileNumber.errors?.required || mobileNumber.errors?.pattern">Mobile Number is required and
+                should be 10 digits.</span>
+        </div><br><br>
+
+        <label for="email">Enter the Email:</label><br>
+        <input type="email" id="email" email name="email" [(ngModel)]="user.email" #email="ngModel" required ngModel><br>
+        <div class="error-message">
+            <span *ngIf="email.errors?.required || email.errors?.email">Email is required and must be a valid email address.</span>
+        </div><br><br>
+
+        <label for="password">Enter the Password:</label><br>
+        <input type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel"
+            minlength="8" required><br>
+        <div class="error-message">
+            <div *ngIf="password.errors?.required">Password is required.</div>
+            <div *ngIf="password.errors?.minlength">Need at least 8 characters</div>
+        </div><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="user.confirmPassword"
+            #confirmPassword="ngModel" required><br>
+        <div class="error-message">
+            <span *ngIf="confirmPassword.errors?.required">Confirm Password is required.</span><br>
+        </div><br><br>
+
+        <button type="submit">Submit</button>&nbsp;&nbsp;
+        <button (click)="resetForm(registrationForm)">Reset</button>
+    </div>
 </form>
 
-<div *ngIf="isSubmitted" class="success-message">Registration successful</div>
+<div class="success-message" *ngIf="isFormSubmitted">
+    <span>Form submitted successfully!</span>
+</div>
